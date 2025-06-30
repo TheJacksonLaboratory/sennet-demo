@@ -1,5 +1,11 @@
 # SenNet Demo Notebooks
 
+- [demo-multimodal-imaging.ipynb](#1.-demo-multimodal-imaging.ipynb)
+- [demo-xenium-reference-dataset.ipynb](#2.-demo-xenium-reference-dataset.ipynb)
+- [demo-transfer-annotations-spatial.ipynb](#3.-demo-transfer-annotations-spatial.ipynb)
+- [demo-visium-explore-spatial.ipynb](#4.-demo-visium-explore-spatial.ipynb)
+
+
 
 ## 1. demo-multimodal-imaging.ipynb
 
@@ -68,7 +74,7 @@ https://docs.python.org/3/tutorial/venv.html
 ## 2. demo-xenium-reference-dataset.ipynb
 
 
-## 3: demo-transfer-annotations-spatial.ipynb
+## 3. demo-transfer-annotations-spatial.ipynb
 
 
-## 4: demo-visium-explore-spatial.ipynb
+## 4. demo-visium-explore-spatial.ipynb
