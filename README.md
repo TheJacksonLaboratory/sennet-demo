@@ -83,7 +83,7 @@ Cell Mask (Bitmask) is the segmentation of individual cells, which enables spati
 
 ## 2. demo-xenium-reference-dataset.ipynb
 
-This Jupyter Notebook is part of a scientific data analysis pipeline designed to process and visualize spatial transcriptomics data from 28 human pancreas tissue samples profiled using the **Xenium 300-gene panel**. The notebook focuses on **annotated cell types**, **sample-level metadata**, and **quantitative imaging-derived metrics** to provide a comprehensive view of tissue architecture and cellular diversity.
+This Jupyter Notebook is part of a scientific data analysis pipeline designed to process and visualize spatial transcriptomics data from 28 human pancreas tissue samples profiled using the **Xenium 300-gene panel** (see collection `SNT793.SZRS.468`). The notebook focuses on **annotated cell types**, **sample-level metadata**, and **quantitative imaging-derived metrics** to provide a comprehensive view of tissue architecture and cellular diversity.
 
 > ⚠️ Note: Users are not required to run the dataset construction steps. Instead, a pre-annotated reference dataset is provided for direct exploration.
 
@@ -115,5 +115,15 @@ This reference dataset lays the groundwork for: Machine learning models to predi
 
 ## 3. demo-transfer-annotations-spatial.ipynb
 
+This notebook explores a normal human pancreas sample from a 69-year-old donor (Data IDs: `SNT576.PXPP.452`, `SNT484.VLRN.777`). The demo emphasizes the power of spatial visualizations in understanding cellular heterogeneity and tissue organization. By leveraging spatial transcriptomics and multiplex immunofluorescence (mIF) data, researchers can explore cell types, phenotypic markers, and gene expression profiles in their native spatial context. This approach is particularly valuable for studying complex tissues, such as the pancreas.
+
+The notebook demonstrates how to visualize cell types, such as Acinar, Ductal, and Endocrine cells, alongside markers like p16 from mIF (PhenoCycler) and genes such as MUC5AC and MUC5B. These visualizations can be tailored to show cells with their boundaries or as dots overlayed on morphology images. The ability to toggle between these modes provides flexibility in highlighting specific spatial features or simplifying the visualization for broader patterns.
+
+Such spatial visualizations are invaluable to the research community for several reasons. First, they enable the identification of spatially distinct cell populations and their functional roles within tissues. For example, the expression of p16, a marker associated with cellular senescence, can be mapped to specific regions, providing insights into aging or disease processes. Similarly, genes like MUC5AC and MUC5B, which are involved in mucin production, can be studied in the context of their spatial distribution and association with cell types.
+
+The ability to subset data by spatial location or cell type provides a powerful tool for focusing on specific regions or populations of interest. This targeted approach is particularly useful for studying rare cell types, localized disease processes, or regions of high marker expression.
+
 
 ## 4. demo-visium-explore-spatial.ipynb
+
+TODO
