@@ -62,3 +62,13 @@ https://docs.python.org/3/tutorial/venv.html
 #### 🚀 Step 3: Launch jupyter
 
     jupyter notebook
+
+
+
+## 2. demo-xenium-reference-dataset.ipynb
+
+
+## 3: demo-transfer-annotations-spatial.ipynb
+
+
+## 4: demo-visium-explore-spatial.ipynb
