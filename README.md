@@ -1,9 +1,9 @@
 # SenNet Demo Notebooks
 
-- [demo-multimodal-imaging.ipynb](#1.-demo-multimodal-imaging.ipynb)
-- [demo-xenium-reference-dataset.ipynb](#2.-demo-xenium-reference-dataset.ipynb)
-- [demo-transfer-annotations-spatial.ipynb](#3.-demo-transfer-annotations-spatial.ipynb)
-- [demo-visium-explore-spatial.ipynb](#4.-demo-visium-explore-spatial.ipynb)
+- [demo-multimodal-imaging.ipynb](#1-demo-multimodal-imagingipynb)
+- [demo-xenium-reference-dataset.ipynb](#2-demo-xenium-reference-datasetipynb)
+- [demo-transfer-annotations-spatial.ipynb](#3-demo-transfer-annotations-spatialipynb)
+- [demo-visium-explore-spatial.ipynb](#4-demo-visium-explore-spatialipynb)
 
 
 
