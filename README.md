@@ -2,10 +2,11 @@
 
 This interactivity and visual elements in these demo notebooks support spatial analysis in fields computational biology. Click to navigate to the description of each of the notebooks below:
 
-- [demo-multimodal-imaging.ipynb](#1-demo-multimodal-imagingipynb)
-- [demo-xenium-reference-dataset.ipynb](#2-demo-xenium-reference-datasetipynb)
-- [demo-transfer-annotations-spatial.ipynb](#3-demo-transfer-annotations-spatialipynb)
-- [demo-visium-explore-spatial.ipynb](#4-demo-visium-explore-spatialipynb)
+- [demo-search-download-datasets.ipynb](#1-demo-search-download-datasetsipynb)
+- [demo-multimodal-imaging.ipynb](#2-demo-multimodal-imagingipynb)
+- [demo-xenium-reference-dataset.ipynb](#3-demo-xenium-reference-datasetipynb)
+- [demo-transfer-annotations-spatial.ipynb](#4-demo-transfer-annotations-spatialipynb)
+- [demo-visium-explore-spatial.ipynb](#5-demo-visium-explore-spatialipynb)
 
 
 ## Setup
@@ -23,20 +24,21 @@ https://docs.python.org/3/tutorial/venv.html
 
 #### 🛠️ Step 2: Install packages
 
-    pip install jupyter numpy pandas 'vitessce[all]' scanpy umap scipy scikit-learn matplotlib tifffile
+    pip install jupyter numpy pandas 'vitessce[all]' scanpy umap scipy scikit-learn matplotlib tifffile globus-cli
 
 
-|package    |demo 1|demo 2|demo 3|demo 4|...  |
-|-----------|-----|-----|-----|-----|-----|
-|vitessce   | 🟢  |     |     |     |     |
-|numpy      | 🟢  | 🟢  | 🟢  | 🟢  |     |
-|pandas     |     | 🟢  | 🟢  | 🟢  |     |
-|scanpy     |     | 🟢  | 🟢  | 🟢  |     |
-|umap       |     | 🟡  |     |     |     |
-|sklearn    |     | 🟡  |     |     |     |
-|scipy      |     | 🟢  | 🟢  | 🟢  |     |
-|matplotlib |     | 🟢  | 🟢  | 🟢  |     |
-|tifffile   |     |     | 🟢  | 🟢  |     |
+|Package    |Demo 1|Demo 2|Demo 3|Demo 4|Demo 5| ... |
+|-----------|-----|-----|-----|-----|-----|-----|
+|vitessce   |     | 🟢  |     |     |     |     |
+|numpy      |     | 🟢  | 🟢  | 🟢  | 🟢  |     |
+|pandas     | 🟢  |     | 🟢  | 🟢  | 🟢  |     |
+|scanpy     |     |     | 🟢  | 🟢  | 🟢  |     |
+|umap       |     |     | 🟡  |     |     |     |
+|sklearn    |     |     | 🟡  |     |     |     |
+|scipy      |     |     | 🟢  | 🟢  | 🟢  |     |
+|matplotlib |     |     | 🟢  | 🟢  | 🟢  |     |
+|tifffile   |     |     |     | 🟢  | 🟢  |     |
+|globus-cli | 🟡  |     |     |     |     |     |
 
 🟢 - required;
 🟡 - optional;
@@ -57,7 +59,25 @@ To explore the notebook(s) and data:
 3. Use the provided widgets to filter by sample, cell type, or metadata, and produce any custom plots.
 
 
-## 1. demo-multimodal-imaging.ipynb
+## 1. demo-search-download-datasets.ipynb
+
+This demo is designed to demonstrate how to search, filter from the SenNet Data Sharing Portal, and then download datasets programmatically for customized analysis. The portal is a centralized platform for sharing high-resolution datasets related to cellular senescence research, including transcriptomics, proteomics, and imaging data. This notebook is designed for researchers working with large-scale datasets who need efficient tools for data discovery, retrieval, and analysis.
+
+Use cases described here are: metadata exploration, programmatic data access, file download automation, integration with Globus.
+
+The demo includes:
+
+* Introduction: Provides an overview of the SenNet Data Sharing Portal, its purpose, and features, such as interactive and programmatic data access.
+* Description: Explains the workflow for filtering and exporting datasets using the portal's interface, including selecting assay types and exporting dataset IDs to a TSV file.
+* Exploring Data Programmatically: Demonstrates how to load the exported TSV file using Python's pandas library and retrieve metadata for datasets.
+* API Functions: Includes Python functions to retrieve derived datasets for a given UUID, and find processed files associated with derived datasets.
+
+Examples:
+1. Retrieving and accessing derived datasets programmatically using specific SenNet IDs.
+2. Accessing Raw Dataset Files using the Globus CLI, including listing and transferring files.
+
+
+## 2. demo-multimodal-imaging.ipynb
 
 ### Pancreatic Tissue Imaging Exploration
 
@@ -81,7 +101,7 @@ Cell Mask (Bitmask) is the segmentation of individual cells, which enables spati
 - Opacity adjustment for blending modalities
 
 
-## 2. demo-xenium-reference-dataset.ipynb
+## 3. demo-xenium-reference-dataset.ipynb
 
 This Jupyter Notebook is part of a scientific data analysis pipeline designed to process and visualize spatial transcriptomics data from 28 human pancreas tissue samples profiled using the **Xenium 300-gene panel** (see collection `SNT793.SZRS.468`). The notebook focuses on **annotated cell types**, **sample-level metadata**, and **quantitative imaging-derived metrics** to provide a comprehensive view of tissue architecture and cellular diversity.
 
@@ -113,7 +133,7 @@ Features of the Noteboo include code to download the annotated dataset for analy
 This reference dataset lays the groundwork for: Machine learning models to predict disease states, Cross-tissue comparisons using harmonized annotations, Integration with other omics layers (e.g., proteomics, epigenomics).
 
 
-## 3. demo-transfer-annotations-spatial.ipynb
+## 4. demo-transfer-annotations-spatial.ipynb
 
 This notebook explores a normal human pancreas sample from a 69-year-old donor (Data IDs: `SNT576.PXPP.452`, `SNT484.VLRN.777`). The demo emphasizes the power of spatial visualizations in understanding cellular heterogeneity and tissue organization. By leveraging spatial transcriptomics and multiplex immunofluorescence (mIF) data, researchers can explore cell types, phenotypic markers, and gene expression profiles in their native spatial context. This approach is particularly valuable for studying complex tissues, such as the pancreas.
 
@@ -124,6 +144,6 @@ Such spatial visualizations are invaluable to the research community for several
 The ability to subset data by spatial location or cell type provides a powerful tool for focusing on specific regions or populations of interest. This targeted approach is particularly useful for studying rare cell types, localized disease processes, or regions of high marker expression.
 
 
-## 4. demo-visium-explore-spatial.ipynb
+## 5. demo-visium-explore-spatial.ipynb
 
 TODO
