@@ -32,16 +32,16 @@ https://docs.python.org/3/tutorial/venv.html
 |vitessce   |     | 🟢  |     |     |     |     |
 |numpy      |     | 🟢  | 🟢  | 🟢  | 🟢  |     |
 |pandas     | 🟢  |     | 🟢  | 🟢  | 🟢  |     |
+|globus-cli | 🟡  |     |     |     |     |     |
 |scanpy     |     |     | 🟢  | 🟢  | 🟢  |     |
 |umap       |     |     | 🟡  |     |     |     |
 |sklearn    |     |     | 🟡  |     |     |     |
 |scipy      |     |     | 🟢  | 🟢  | 🟢  |     |
 |matplotlib |     |     | 🟢  | 🟢  | 🟢  |     |
 |tifffile   |     |     |     | 🟢  | 🟢  |     |
-|globus-cli | 🟡  |     |     |     |     |     |
 
-🟢 - required;
-🟡 - optional;
+🟢 - required<br>
+🟡 - optional
 
 
 #### Step 3. Download the notebook(s) to a local computer
