@@ -146,4 +146,8 @@ The ability to subset data by spatial location or cell type provides a powerful 
 
 ## 5. demo-visium-explore-spatial.ipynb
 
-TODO
+This notebook is designed to analyze spatial transcriptomics data from the pancreas tissue sample of a 69-year-old donor, JDC-WP-012-w (`SNT544.XHGB.538`), using the Visium platform. The Visium platform enables researchers to study gene expression patterns in their spatial context, preserving the spatial organization of tissues. This is particularly important for understanding complex biological processes, tissue heterogeneity, and cellular interactions within the pancreas, which plays a critical role in metabolic regulation and disease progression.
+
+The pancreas is a highly specialized organ composed of distinct regions, including the endocrine Islets of Langerhans, exocrine acinar cells, and ductal structures. Spatial transcriptomics allows researchers to characterize these regions at the molecular level, identifying spatially distinct gene expression patterns. In this notebook, the dataset is processed to identify clusters of Visium spots, visualize spatial gene expression, and explore transcriptional topics associated with specific biological processes or cell states. For example, topics such as Islet of Langerhans, Acinar to ductal metaplasia (ADM), and Vascular structures are visualized to understand their spatial organization and associated gene sets.
+
+The notebook leverages computational tools like scanpy for preprocessing, dimensionality reduction (PCA and UMAP), clustering (Leiden algorithm), and differential expression analysis. It also integrates STdeconvolve, a reference-free deconvolution tool, to identify latent transcriptional topics that represent co-expressed gene groups. These topics provide insights into spatially organized biological processes, such as endocrine function in the Islets of Langerhans or pathological changes like ADM, which is associated with pancreatic disease and cancer.
