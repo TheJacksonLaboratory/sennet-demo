@@ -77,14 +77,12 @@ Examples:
 1. Retrieving and accessing derived datasets programmatically using specific SenNet IDs.
 2. Accessing Raw Dataset Files using the Globus CLI, including listing and transferring files.
 
-[Click here to view the demo 1 notebook](notebooks/demo-search-download-datasets.ipynb)
+[Click here to view Demo 1](notebooks/demo-search-download-datasets.ipynb)
 
 
 ## 2. demo-multimodal-imaging.ipynb
 
-### Pancreatic Tissue Imaging Exploration
-
-This notebook explores a normal human pancreas sample from a 69-year-old donor (Data IDs: `SNT574.MMQC.683`, `SNT594.JCFN.856`, `SNT227.HLMG.672`). The selected tissue region features a large mucinous pancreatic duct expressing keratin 19 (KRT19), a surrounding layer of endocrine alpha cells, and additional layers of endothelial cells, fibroblasts, and other stromal components.
+This notebook explores a normal human pancreas tissue sample from a 69-year-old donor (Data IDs: `SNT574.MMQC.683`, `SNT594.JCFN.856`, `SNT227.HLMG.672`). The selected tissue region features a large mucinous pancreatic duct expressing keratin 19 (KRT19), a surrounding layer of endocrine alpha cells, and additional layers of endothelial cells, fibroblasts, and other stromal components.
 
 Why This Case is Interesting? - This case offers a unique opportunity to study:
 
@@ -102,6 +100,8 @@ Cell Mask (Bitmask) is the segmentation of individual cells, which enables spati
 - Zooming and panning for fine detail inspection
 - Channel and color control
 - Opacity adjustment for blending modalities
+
+[Click here to view Demo 2](notebooks/demo-multimodal-imaging.ipynb)
 
 
 ## 3. demo-xenium-reference-dataset.ipynb
@@ -135,6 +135,8 @@ Features of the Noteboo include code to download the annotated dataset for analy
 
 This reference dataset lays the groundwork for: Machine learning models to predict disease states, Cross-tissue comparisons using harmonized annotations, Integration with other omics layers (e.g., proteomics, epigenomics).
 
+[Click here to view Demo 3](notebooks/demo-xenium-reference-dataset.ipynb)
+
 
 ## 4. demo-transfer-annotations-spatial.ipynb
 
@@ -146,6 +148,8 @@ Such spatial visualizations are invaluable to the research community for several
 
 The ability to subset data by spatial location or cell type provides a powerful tool for focusing on specific regions or populations of interest. This targeted approach is particularly useful for studying rare cell types, localized disease processes, or regions of high marker expression.
 
+[Click here to view Demo 4](notebooks/demo-transfer-annotations-spatial.ipynb)
+
 
 ## 5. demo-visium-explore-spatial.ipynb
 
@@ -154,3 +158,5 @@ This notebook is designed to analyze spatial transcriptomics data from the pancr
 The pancreas is a highly specialized organ composed of distinct regions, including the endocrine Islets of Langerhans, exocrine acinar cells, and ductal structures. Spatial transcriptomics allows researchers to characterize these regions at the molecular level, identifying spatially distinct gene expression patterns. In this notebook, the dataset is processed to identify clusters of Visium spots, visualize spatial gene expression, and explore transcriptional topics associated with specific biological processes or cell states. For example, topics such as Islet of Langerhans, Acinar to ductal metaplasia (ADM), and Vascular structures are visualized to understand their spatial organization and associated gene sets.
 
 The notebook leverages computational tools like scanpy for preprocessing, dimensionality reduction (PCA and UMAP), clustering (Leiden algorithm), and differential expression analysis. It also integrates STdeconvolve, a reference-free deconvolution tool, to identify latent transcriptional topics that represent co-expressed gene groups. These topics provide insights into spatially organized biological processes, such as endocrine function in the Islets of Langerhans or pathological changes like ADM, which is associated with pancreatic disease and cancer.
+
+[Click here to view Demo 5](notebooks/demo-visium-explore-spatial.ipynb)
