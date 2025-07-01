@@ -17,6 +17,7 @@ This guide helps you set up a Python environment with necessary packages and Jup
 
 - Python 3.8 or higher
 - curl: the examples use this unitility to download example data
+- unzip: the examples use this utility to unpack downloaded data
 
 #### 🛠️ Step 1 (optional): Create and activate a virtual environment
 
@@ -75,6 +76,8 @@ The demo includes:
 Examples:
 1. Retrieving and accessing derived datasets programmatically using specific SenNet IDs.
 2. Accessing Raw Dataset Files using the Globus CLI, including listing and transferring files.
+
+[Click here to view the demo 1 notebook](notebooks/demo-search-download-datasets.ipynb)
 
 
 ## 2. demo-multimodal-imaging.ipynb
