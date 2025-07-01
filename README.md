@@ -6,7 +6,7 @@ This interactivity and visual elements in these demo notebooks support spatial a
 - [demo-multimodal-imaging.ipynb](#2-demo-multimodal-imagingipynb)
 - [demo-xenium-reference-dataset.ipynb](#3-demo-xenium-reference-datasetipynb)
 - [demo-transfer-annotations-spatial.ipynb](#4-demo-transfer-annotations-spatialipynb)
-- [demo-visium-explore-spatial.ipynb](#5-demo-visium-explore-spatialipynb)
+- [demo-visium-explore-spatial.ipynb](#5-demo-visium-spatialipynb)
 
 
 ## Setup
@@ -151,7 +151,7 @@ The ability to subset data by spatial location or cell type provides a powerful 
 [Click here to view Demo 4](notebooks/demo-transfer-annotations-spatial.ipynb)
 
 
-## 5. demo-visium-explore-spatial.ipynb
+## 5. demo-visium-spatial.ipynb
 
 This notebook is designed to analyze spatial transcriptomics data from the pancreas tissue sample of a 69-year-old donor, JDC-WP-012-w (`SNT544.XHGB.538`), using the Visium platform. The Visium platform enables researchers to study gene expression patterns in their spatial context, preserving the spatial organization of tissues. This is particularly important for understanding complex biological processes, tissue heterogeneity, and cellular interactions within the pancreas, which plays a critical role in metabolic regulation and disease progression.
 
@@ -159,4 +159,4 @@ The pancreas is a highly specialized organ composed of distinct regions, includi
 
 The notebook leverages computational tools like scanpy for preprocessing, dimensionality reduction (PCA and UMAP), clustering (Leiden algorithm), and differential expression analysis. It also integrates STdeconvolve, a reference-free deconvolution tool, to identify latent transcriptional topics that represent co-expressed gene groups. These topics provide insights into spatially organized biological processes, such as endocrine function in the Islets of Langerhans or pathological changes like ADM, which is associated with pancreatic disease and cancer.
 
-[Click here to view Demo 5](notebooks/demo-visium-explore-spatial.ipynb)
+[Click here to view Demo 5](notebooks/demo-visium-spatial.ipynb)
