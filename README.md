@@ -8,6 +8,7 @@ This interactivity and visual elements in these demo notebooks support spatial a
 - [demo-transfer-annotations-spatial.ipynb](#4-demo-transfer-annotations-spatialipynb)
 - [demo-visium-explore-spatial.ipynb](#5-demo-visium-spatialipynb)
 - [demo-query-sources.ipynb](#6-demo-query-sourcesipynb)
+- [demo-search-mouse-geomx-data-by-age.ipynb](#7-demo-search-mouse-geomx-data-by-ageipynb)
 
 
 ## Setup
@@ -16,7 +17,7 @@ This guide helps you set up a Python environment with necessary packages and Jup
 
 #### Installation prerequisites
 
-- Python 3.8 or higher
+- Python 3.9 or higher
 - curl: the examples use this unitility to download example data
 - unzip: the examples use this utility to unpack downloaded data
 
@@ -26,21 +27,22 @@ https://docs.python.org/3/tutorial/venv.html
 
 #### 🛠️ Step 2: Install packages
 
-    pip install jupyter numpy pandas 'vitessce[all]' scanpy umap scipy scikit-learn matplotlib tifffile globus-cli
+    pip install jupyter numpy pandas 'vitessce[all]' scanpy umap scipy scikit-learn matplotlib tifffile globus-cli atlas-consortia-clt
 
 
-|Package    |Demo 1|Demo 2|Demo 3|Demo 4|Demo 5| ... |
-|-----------|-----|-----|-----|-----|-----|-----|
-|vitessce   |     | 🟢  |     |     |     |     |
-|numpy      |     | 🟢  | 🟢  | 🟢  | 🟢  |     |
-|pandas     | 🟢  |     | 🟢  | 🟢  | 🟢  |     |
-|globus-cli | 🟡  |     |     |     |     |     |
-|scanpy     |     |     | 🟢  | 🟢  | 🟢  |     |
-|umap       |     |     | 🟡  |     |     |     |
-|sklearn    |     |     | 🟡  |     |     |     |
-|scipy      |     |     | 🟢  | 🟢  | 🟢  |     |
-|matplotlib |     |     | 🟢  | 🟢  | 🟢  |     |
-|tifffile   |     |     |     | 🟢  | 🟢  |     |
+|Package    |Demo 1|Demo 2|Demo 3|Demo 4|Demo 5|Demo 6|Demo 7| ... |
+|----------------------|-----|-----|-----|-----|-----|-----|-----|-----|
+|vitessce              |     | 🟢  |     |     |     |     |     |     |
+|numpy                 |     | 🟢  | 🟢  | 🟢  | 🟢  |     |     |     |
+|pandas                | 🟢  |     | 🟢  | 🟢  | 🟢  |     |  🟢  |     |
+|globus-cli            | 🟡  |     |     |     |     |     |     |     |
+|scanpy                |     |     | 🟢  | 🟢  | 🟢  |     |     |     |
+|umap                  |     |     | 🟡  |     |     |     |     |     |
+|sklearn               |     |     | 🟡  |     |     |     |     |     |
+|scipy                 |     |     | 🟢  | 🟢  | 🟢  |     |     |     |
+|matplotlib            |     |     | 🟢  | 🟢  | 🟢  |     |     |     |
+|tifffile              |     |     |     | 🟢  | 🟢  |     |     |     |
+|atlas-consortia-clt   |     |     |     |     |     |     |  🟡  |     |
 
 🟢 - required<br>
 🟡 - optional
@@ -170,3 +172,12 @@ The task is find Donor metadata associated with each of the SenNet datasets of i
 Lastly, the notebook explores several ways to visualize the obtained Donor metadata.
 
 [Click here to view Demo 6](notebooks/demo-query-sources.ipynb)
+
+
+## 7. demo-search-mouse-geomx-data-by-age.ipynb
+
+The focus of this vignette is using the SenNet Search API to find datasets of a particular type (in this example, GeoMx NGS), then using `pandas` to further filter those datasets based on existing dataset attributes (e.g. source species) as well as derived information (e.g. age). In this notebook, all GeoMx datasets are queried using the API and parsed by those from human- or mouse-derived sources. Mouse datasets are further filtered to include only data from mice older than 12 months. The latter of these filters requires age to be calculated from existing source metadata fields `date_of_birth_or_fertilization` and `date_of_death`.
+
+Filtered `pandas` dataframes can be used to generate a customized manifest text file to download data using the SenNet Command Line Transfer tool.
+
+[Click here to view Demo 7](notebooks/demo-search-mouse-geomx-data-by-age.ipynb)
