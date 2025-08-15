@@ -2,13 +2,17 @@
 
 This interactivity and visual elements in these demo notebooks support spatial analysis in fields computational biology. Click to navigate to the description of each of the notebooks below:
 
-- [demo-search-download-datasets.ipynb](#1-demo-search-download-datasetsipynb)
-- [demo-multimodal-imaging.ipynb](#2-demo-multimodal-imagingipynb)
-- [demo-xenium-reference-dataset.ipynb](#3-demo-xenium-reference-datasetipynb)
-- [demo-transfer-annotations-spatial.ipynb](#4-demo-transfer-annotations-spatialipynb)
-- [demo-visium-explore-spatial.ipynb](#5-demo-visium-spatialipynb)
-- [demo-query-sources.ipynb](#6-demo-query-sourcesipynb)
-- [demo-search-mouse-geomx-data-by-age.ipynb](#7-demo-search-mouse-geomx-data-by-ageipynb)
+- [demo-search-download-datasets.ipynb](#demo-search-download-datasetsipynb)
+- [demo-multimodal-imaging.ipynb](#demo-multimodal-imagingipynb)
+- [demo-affine-transform.ipynb](#demo-affine-transformipynb)
+- [demo-xenium-reference-dataset.ipynb](#demo-xenium-reference-datasetipynb)
+- [demo-transfer-annotations-spatial.ipynb](#demo-transfer-annotations-spatialipynb)
+- [demo-xenium-islets-composition.ipynb](#demo-xenium-islets-compositionipynb)
+- [demo-xenium-neighbors.ipynb](#demo-xenium-neighborsipynb)
+- [demo-visium-explore-spatial.ipynb](#demo-visium-spatialipynb)
+- [demo-scrna-one-donor.ipynb](#demo-scrna-one-donoripynb)
+- [demo-query-sources.ipynb](#demo-query-sourcesipynb)
+- [demo-search-mouse-geomx-data-by-age.ipynb](#demo-search-mouse-geomx-data-by-ageipynb)
 
 
 ## Setup
@@ -27,22 +31,27 @@ https://docs.python.org/3/tutorial/venv.html
 
 #### 🛠️ Step 2: Install packages
 
-    pip install jupyter numpy pandas 'vitessce[all]' scanpy umap scipy scikit-learn matplotlib tifffile globus-cli atlas-consortia-clt
+    pip install jupyter numpy pandas 'vitessce[all]' scanpy umap scipy scikit-learn matplotlib tifffile globus-cli atlas-consortia-clt requests fsspec zarr xarray kerchunk
 
 
-|Package    |Demo 1|Demo 2|Demo 3|Demo 4|Demo 5|Demo 6|Demo 7| ... |
-|----------------------|-----|-----|-----|-----|-----|-----|-----|-----|
-|vitessce              |     | 🟢  |     |     |     |     |     |     |
-|numpy                 |     | 🟢  | 🟢  | 🟢  | 🟢  |     |     |     |
-|pandas                | 🟢  |     | 🟢  | 🟢  | 🟢  |     |  🟢  |     |
-|globus-cli            | 🟡  |     |     |     |     |     |     |     |
-|scanpy                |     |     | 🟢  | 🟢  | 🟢  |     |     |     |
-|umap                  |     |     | 🟡  |     |     |     |     |     |
-|sklearn               |     |     | 🟡  |     |     |     |     |     |
-|scipy                 |     |     | 🟢  | 🟢  | 🟢  |     |     |     |
-|matplotlib            |     |     | 🟢  | 🟢  | 🟢  |     |     |     |
-|tifffile              |     |     |     | 🟢  | 🟢  |     |     |     |
-|atlas-consortia-clt   |     |     |     |     |     |     |  🟡  |     |
+|Package    |Demo<br>search<br>portal|Demo<br>multimodal<br>imaging|Demo<br>Xenium<br>reference|Demo<br>Xenium<br>annotate|Demo<br>Visium<br>spatial|Demo<br>query<br>sources|Demo<br>GeoMx<br>search|Demo<br>Xenium<br>neighbors|Demo<br>Xenium<br>Islets|Demo<br>scRNAseq<br>pancreas|Demo<br>affine<br>transform| ... |
+|----------------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|vitessce              |     | 🟢  |     |     |     |     |     |     |    |     |     |     |
+|requests              | 🟢  |     |     |     |     |  🟢 |  🟢 |     |    |     |  🟢 |     |
+|pandas                | 🟢  |     | 🟢  | 🟢  | 🟢  | 🟢  |  🟢 | 🟢 | 🟢 | 🟢 |  🟢 |     |
+|matplotlib            |     |     | 🟢  | 🟢  | 🟢  | 🟢  |     | 🟢  | 🟢 | 🟢  |  🟢 |     |
+|numpy                 |     | 🟢  | 🟢  | 🟢  | 🟢  |     |     | 🟢 | 🟢 | 🟢  | 🟢  |     |
+|scanpy                |     |     | 🟢  | 🟢  | 🟢  |     |     | 🟢 | 🟢 |  🟢 | 🟢 |     |
+|scipy                 |     |     | 🟢  | 🟢  | 🟢  |     |     | 🟢  | 🟢 |     |     |     |
+|tifffile              |     |     |     | 🟢  | 🟢  |     |     |  🟢 | 🟢 |     |  🟢 |     |
+|fsspec                |     |     |     |     |     |      |    |     |    |     |  🟢 |     |
+|xarray                |     |     |     |     |     |      |    |     |    |     |  🟢 |     |
+|zarr                  |     |     |     |     |     |      |    |     |    |     |  🟢 |     |
+|kerchunk              |     |     |     |     |     |      |    |     |    |     |  🟢 |     |
+|umap                  |     |     | 🟡  |     |     |     |     |     |    |     |     |     |
+|sklearn               |     |     | 🟡  |     |     |     |     |     |    |     |     |     |
+|globus-cli            | 🟡  |     |     |     |     |     |     |     |    |     |     |     |
+|atlas-consortia-clt   |     |     |     |     |     |      | 🟡 |     |    |     |     |     |
 
 🟢 - required<br>
 🟡 - optional
@@ -62,8 +71,9 @@ To explore the notebook(s) and data:
 2. Follow the guided sections to visualize and interpret the data.
 3. Use the provided widgets to filter by sample, cell type, or metadata, and produce any custom plots.
 
+## Notebooks overview
 
-## 1. demo-search-download-datasets.ipynb
+### demo-search-download-datasets.ipynb
 
 This demo is designed to demonstrate how to search, filter from the SenNet Data Sharing Portal, and then download datasets programmatically for customized analysis. The portal is a centralized platform for sharing high-resolution datasets related to cellular senescence research, including transcriptomics, proteomics, and imaging data. This notebook is designed for researchers working with large-scale datasets who need efficient tools for data discovery, retrieval, and analysis.
 
@@ -83,7 +93,7 @@ Examples:
 [Click here to view Demo 1](notebooks/demo-search-download-datasets.ipynb)
 
 
-## 2. demo-multimodal-imaging.ipynb
+### demo-multimodal-imaging.ipynb
 
 This notebook explores a normal human pancreas tissue sample from a 69-year-old donor (Data IDs: `SNT574.MMQC.683`, `SNT594.JCFN.856`, `SNT227.HLMG.672`). The selected tissue region features a large mucinous pancreatic duct expressing keratin 19 (KRT19), a surrounding layer of endocrine alpha cells, and additional layers of endothelial cells, fibroblasts, and other stromal components.
 
@@ -104,10 +114,21 @@ Cell Mask (Bitmask) is the segmentation of individual cells, which enables spati
 - Channel and color control
 - Opacity adjustment for blending modalities
 
-[Click here to view Demo 2](notebooks/demo-multimodal-imaging.ipynb)
+[Click here to view Demo](notebooks/demo-multimodal-imaging.ipynb)
 
 
-## 3. demo-xenium-reference-dataset.ipynb
+### demo-affine-transform.ipynb
+
+This research data demo combines traditional microscopy with cutting-edge spatial genomics to study normal human pancreas tissue from a 69-year-old donor (Data IDs for Xenium and H&E: `SNT576.PXPP.452`, `SNT443.KFNS.239`). Understanding healthy pancreatic structure is essential for developing treatments for diabetes, pancreatic cancer, and other disorders.
+
+The demo integrates two powerful imaging approaches: H&E histology, which uses chemical stains to reveal tissue architecture in blue and pink colors, and Xenium spatial genomics, which measures gene expression directly within intact tissue while preserving spatial information. The challenge involves combining these different imaging systems that use separate coordinate frameworks. Sophisticated mathematical transformations solve this by converting coordinates between systems, allowing researchers to overlay gene activity data precisely onto traditional tissue images.
+
+The work demonstrates innovative streaming technology that makes massive microscopy datasets accessible without requiring researchers to download gigabyte-sized files. The system allows remote programmatic access to the SenNet Data Sharing Portal to specific image resolution levels as needed. This combination creates comprehensive maps showing both tissue structure and molecular activity simultaneously, advancing our understanding of how genes function within their natural tissue context.
+
+[Click here to view Demo](demo-affine-transform.ipynb)
+
+
+### demo-xenium-reference-dataset.ipynb
 
 This Jupyter Notebook is part of a scientific data analysis pipeline designed to process and visualize spatial transcriptomics data from 28 human pancreas tissue samples profiled using the **Xenium 300-gene panel** (see collection `SNT793.SZRS.468`). The notebook focuses on **annotated cell types**, **sample-level metadata**, and **quantitative imaging-derived metrics** to provide a comprehensive view of tissue architecture and cellular diversity.
 
@@ -138,10 +159,10 @@ Features of the Noteboo include code to download the annotated dataset for analy
 
 This reference dataset lays the groundwork for: Machine learning models to predict disease states, Cross-tissue comparisons using harmonized annotations, Integration with other omics layers (e.g., proteomics, epigenomics).
 
-[Click here to view Demo 3](notebooks/demo-xenium-reference-dataset.ipynb)
+[Click here to view Demo](notebooks/demo-xenium-reference-dataset.ipynb)
 
 
-## 4. demo-transfer-annotations-spatial.ipynb
+### demo-transfer-annotations-spatial.ipynb
 
 This notebook explores a normal human pancreas sample from a 69-year-old donor (Data IDs: `SNT576.PXPP.452`, `SNT484.VLRN.777`). The demo emphasizes the power of spatial visualizations in understanding cellular heterogeneity and tissue organization. By leveraging spatial transcriptomics and multiplex immunofluorescence (mIF) data, researchers can explore cell types, phenotypic markers, and gene expression profiles in their native spatial context. This approach is particularly valuable for studying complex tissues, such as the pancreas.
 
@@ -151,10 +172,41 @@ Such spatial visualizations are invaluable to the research community for several
 
 The ability to subset data by spatial location or cell type provides a powerful tool for focusing on specific regions or populations of interest. This targeted approach is particularly useful for studying rare cell types, localized disease processes, or regions of high marker expression.
 
-[Click here to view Demo 4](notebooks/demo-transfer-annotations-spatial.ipynb)
+[Click here to view Demo](notebooks/demo-transfer-annotations-spatial.ipynb)
 
 
-## 5. demo-visium-spatial.ipynb
+### demo-xenium-neighbors.ipynb
+
+[Click here to view Demo](demo-xenium-neighbors.ipynb)
+
+
+
+
+
+
+
+
+
+
+### demo-xenium-islets-composition.ipynb
+
+[Click here to view Demo](notebooks/demo-xenium-islets-composition.ipynb)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### demo-visium-spatial.ipynb
 
 This notebook is designed to analyze spatial transcriptomics data from the pancreas tissue sample of a 69-year-old donor, JDC-WP-012-w (`SNT544.XHGB.538`), using the Visium platform. The Visium platform enables researchers to study gene expression patterns in their spatial context, preserving the spatial organization of tissues. This is particularly important for understanding complex biological processes, tissue heterogeneity, and cellular interactions within the pancreas, which plays a critical role in metabolic regulation and disease progression.
 
@@ -165,19 +217,33 @@ The notebook leverages computational tools like scanpy for preprocessing, dimens
 [Click here to view Demo 5](notebooks/demo-visium-spatial.ipynb)
 
 
-## 6. demo-query-sources.ipynb
+### demo-scrna-one-donor.ipynb
+
+[Click here to view Demo](demo-scrna-one-donor.ipynb)
+
+
+
+
+
+
+
+
+
+
+
+### demo-query-sources.ipynb
 
 The task is find Donor metadata associated with each of the SenNet datasets of interest. The SenNet Data Sharing Portal (https://data.sennetconsortium.org/) is used to query IDs of all kidney histology datasets generated by UConn Health TMC, resulting in a list of 43 dataset **`sennet_id`**, e.g., `SNT224.LSLK.429`. The list was downloaded in TSV file format. The downloaded TSV file is loaded with a python, then metadata is retrieved via API for each SenNet ID of interest and compiled it into a table.
 
 Lastly, the notebook explores several ways to visualize the obtained Donor metadata.
 
-[Click here to view Demo 6](notebooks/demo-query-sources.ipynb)
+[Click here to view Demo](notebooks/demo-query-sources.ipynb)
 
 
-## 7. demo-search-mouse-geomx-data-by-age.ipynb
+### demo-search-mouse-geomx-data-by-age.ipynb
 
 The focus of this vignette is using the SenNet Search API to find datasets of a particular type (in this example, GeoMx NGS), then using `pandas` to further filter those datasets based on existing dataset attributes (e.g. source species) as well as derived information (e.g. age). In this notebook, all GeoMx datasets are queried using the API and parsed by those from human- or mouse-derived sources. Mouse datasets are further filtered to include only data from mice older than 12 months. The latter of these filters requires age to be calculated from existing source metadata fields `date_of_birth_or_fertilization` and `date_of_death`.
 
 Filtered `pandas` dataframes can be used to generate a customized manifest text file to download data using the SenNet Command Line Transfer tool.
 
-[Click here to view Demo 7](notebooks/demo-search-mouse-geomx-data-by-age.ipynb)
+[Click here to view Demo](notebooks/demo-search-mouse-geomx-data-by-age.ipynb)
