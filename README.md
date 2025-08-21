@@ -21,18 +21,56 @@ This guide helps you set up a Python environment with necessary packages and Jup
 
 #### Installation prerequisites
 
-- Python 3.9 or higher
-- curl: the examples use this unitility to download example data
-- unzip: the examples use this utility to unpack downloaded data
+- Python 3.9
+- Terminal app or Command Prompt
 
-#### 🛠️ Step 1 (optional): Create and activate a virtual environment
+#### Step 1: Get a copy of this repository
 
-https://docs.python.org/3/tutorial/venv.html
+Make a new directory and navigate to it, for example, on Mac run in the Terminal app:
 
-#### 🛠️ Step 2: Install packages
+    mkdir -p ~/some/path/
+    cd ~/some/path/
 
-    pip install jupyter numpy pandas 'vitessce[all]' scanpy umap scipy scikit-learn matplotlib tifffile globus-cli atlas-consortia-clt requests fsspec zarr xarray kerchunk stardist tensorflow
+Clone the repository:
 
+    git clone https://github.com/TheJacksonLaboratory/sennet-demo.git
+
+<details closed><summary>Authentication</summary><p>
+
+Note that until this repository is public, the user must login, e.g., as below, and then following prompts to login with HTTPS via a web browser and a code:
+
+    conda config --remove channels defaults
+    conda config --add channels conda-forge
+    conda config --set channel_priority strict
+    conda install gh
+    gh auth login
+
+</p></details>
+
+
+#### Step 2, optional: Create and activate a virtual environment
+
+<details closed><summary>Setup environmet</summary><p>
+Using conda is a bit easier:
+
+    conda create --name sennet-demo-env "python==3.9"
+    conda activate sennet-demo-env
+
+or
+
+If Python 3.9 not installed, then install it and create a virtual environment (https://docs.python.org/3/tutorial/venv.html)
+
+    python3.9 -m venv myenv
+    source myenv/bin/activate
+
+</p></details>
+
+
+#### Step 3: Install packages
+
+    pip install jupyter "notebook>=7" numpy pandas "pyarrow<=20.0.0" 'vitessce[all]' scanpy umap scipy scikit-learn matplotlib globus-cli atlas-consortia-clt requests fsspec zarr xarray "distributed<=2023" kerchunk==0.2.7 tifffile==2022.4.28 stardist==0.8.5 tensorflow==2.14 igraph leidenalg aiohttp==3.8.6
+
+<details closed><summary>Packages usage</summary><p>
 
 |Package    |Demo<br>search<br>portal|Demo<br>multimodal<br>imaging|Demo<br>Xenium<br>reference|Demo<br>Xenium<br>annotate|Demo<br>Visium<br>spatial|Demo<br>query<br>sources|Demo<br>GeoMx<br>search|Demo<br>Xenium<br>neighbors|Demo<br>Xenium<br>Islets|Demo<br>scRNAseq<br>pancreas|Demo<br>affine<br>transform| ... |
 |----------------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
@@ -58,18 +96,15 @@ https://docs.python.org/3/tutorial/venv.html
 🟢 - required<br>
 🟡 - optional
 
+</p></details>
 
-#### Step 3. Download the notebook(s) to a local computer
-
-    ./notebooks/demo-multimodal-imaging.ipynb
-
-#### 🚀 Step 3: Launch jupyter
+#### 🚀 Step 4: Launch jupyter
 
     jupyter notebook
 
 To explore the notebook(s) and data:
 
-1. Open the notebook in JupyterLab or Jupyter Notebook.
+1. Navigate to the notebook in JupyterLab or Jupyter Notebook.
 2. Follow the guided sections to visualize and interpret the data.
 3. Use the provided widgets to filter by sample, cell type, or metadata, and produce any custom plots.
 
