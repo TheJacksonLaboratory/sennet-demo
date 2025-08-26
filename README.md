@@ -13,6 +13,7 @@ This interactivity and visual elements in these demo notebooks support spatial a
 - [demo-multimodal-imaging.ipynb](#demo-multimodal-imagingipynb)
 - [demo-scrna-one-donor.ipynb](#demo-scrna-one-donoripynb)
 - [demo-visium-explore-spatial.ipynb](#demo-visium-spatialipynb)
+- [demo-snrna-seq-all-human-lung.ipynb](#demo-snrna-seq-all-human-lungipynb)
 
 
 ## Setup
@@ -72,7 +73,7 @@ If Python 3.9 not installed, then install it and create a virtual environment (h
 #### Step 3: Install packages
 
     # For environment A: most notebooks
-    pip install jupyter "notebook>=7" numpy pandas "pyarrow<=20.0.0" 'vitessce[all]' scanpy umap scipy scikit-learn matplotlib globus-cli atlas-consortia-clt requests tifffile imagecodecs igraph leidenalg
+    pip install jupyter "notebook>=7" numpy pandas "pyarrow<=20.0.0" 'vitessce[all]' scanpy umap scipy scikit-learn matplotlib globus-cli atlas-consortia-clt requests tifffile imagecodecs igraph leidenalg harmonypy celltypist
 
 or
 
@@ -81,26 +82,28 @@ or
 
 <details closed><summary>Packages usage</summary><p>
 
-|Package    |Demo<br>search<br>portal|Demo<br>multimodal<br>imaging|Demo<br>Xenium<br>reference|Demo<br>Xenium<br>annotate|Demo<br>Visium<br>spatial|Demo<br>query<br>sources|Demo<br>GeoMx<br>search|Demo<br>Xenium<br>neighbors|Demo<br>Xenium<br>Islets|Demo<br>scRNAseq<br>pancreas|Demo<br>affine<br>transform| ... |
-|----------------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-|vitessce              |     | 🟢  |     |     |     |     |     |     |    |     |     |     |
-|requests              | 🟢  |     |     |     |     |  🟢 |  🟢 |     |    |     |  🟢 |     |
-|pandas                | 🟢  |     | 🟢  | 🟢  | 🟢  | 🟢  |  🟢 | 🟢 | 🟢 | 🟢 |  🟢 |     |
-|matplotlib            |     |     | 🟢  | 🟢  | 🟢  | 🟢  |     | 🟢  | 🟢 | 🟢  |  🟢 |     |
-|numpy                 |     | 🟢  | 🟢  | 🟢  | 🟢  |     |     | 🟢 | 🟢 | 🟢  | 🟢  |     |
-|scanpy                |     |     | 🟢  | 🟢  | 🟢  |     |     | 🟢 | 🟢 |  🟢 | 🟢 |     |
-|scipy                 |     |     | 🟢  | 🟢  | 🟢  |     |     | 🟢  | 🟢 |     |     |     |
-|tifffile              |     |     |     | 🟢  | 🟢  |     |     |  🟢 | 🟢 |     |  🟢 |     |
-|fsspec                |     |     |     |     |     |      |    |     |    |     |  🟢 |     |
-|xarray                |     |     |     |     |     |      |    |     |    |     |  🟢 |     |
-|zarr                  |     |     |     |     |     |      |    |     |    |     |  🟢 |     |
-|kerchunk              |     |     |     |     |     |      |    |     |    |     |  🟢 |     |
-|stardist              |     |     |     |     |     |      |    |     |    |     |  🟢 |     |
-|tensorflow            |     |     |     |     |     |      |    |     |    |     |  🟢 |     |
-|umap                  |     |     | 🟡  |     |     |     |     |     |    |     |     |     |
-|sklearn               |     |     | 🟡  |     |     |     |     |     |    |     |     |     |
-|globus-cli            | 🟡  |     |     |     |     |     |     |     |    |     |     |     |
-|atlas-consortia-clt   |     |     |     |     |     |      | 🟡 |     |    |     |     |     |
+|Package    |Demo<br>search<br>portal|Demo<br>multimodal<br>imaging|Demo<br>Xenium<br>reference|Demo<br>Xenium<br>annotate|Demo<br>Visium<br>spatial|Demo<br>query<br>sources|Demo<br>GeoMx<br>search|Demo<br>Xenium<br>neighbors|Demo<br>Xenium<br>Islets|Demo<br>scRNAseq<br>pancreas|Demo<br>affine<br>transform|Demo<br>snRNAseq<br>human<br>lung| ... |
+|----------------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|vitessce              |     | 🟢  |     |     |     |     |     |     |    |     |     |     |     |
+|requests              | 🟢  |     |     |     |     |  🟢 |  🟢 |     |    |     |  🟢 |  🟢  |     |
+|pandas                | 🟢  |     | 🟢  | 🟢  | 🟢  | 🟢  |  🟢 | 🟢 | 🟢 | 🟢 |  🟢 |  🟢  |     |
+|matplotlib            |     |     | 🟢  | 🟢  | 🟢  | 🟢  |     | 🟢  | 🟢 | 🟢  |  🟢 |  🟢  |     |
+|numpy                 |     | 🟢  | 🟢  | 🟢  | 🟢  |     |     | 🟢 | 🟢 | 🟢  | 🟢  |  🟢  |     |
+|scanpy                |     |     | 🟢  | 🟢  | 🟢  |     |     | 🟢 | 🟢 |  🟢 | 🟢 |  🟢  |     |
+|scipy                 |     |     | 🟢  | 🟢  | 🟢  |     |     | 🟢  | 🟢 |     |     |     |     |
+|tifffile              |     |     |     | 🟢  | 🟢  |     |     |  🟢 | 🟢 |     |  🟢 |     |     |
+|fsspec                |     |     |     |     |     |      |    |     |    |     |  🟢 |     |     |
+|xarray                |     |     |     |     |     |      |    |     |    |     |  🟢 |     |     |
+|zarr                  |     |     |     |     |     |      |    |     |    |     |  🟢 |     |     |
+|kerchunk              |     |     |     |     |     |      |    |     |    |     |  🟢 |     |     |
+|stardist              |     |     |     |     |     |      |    |     |    |     |  🟢 |     |     |
+|tensorflow            |     |     |     |     |     |      |    |     |    |     |  🟢 |     |     |
+|umap                  |     |     | 🟡  |     |     |     |     |     |    |     |     |     |     |
+|sklearn               |     |     | 🟡  |     |     |     |     |     |    |     |     |     |     |
+|globus-cli            | 🟡  |     |     |     |     |     |     |     |    |     |     |     |     |
+|atlas-consortia-clt   |     |     |     |     |     |      | 🟡 |     |    |     |     |     |     |
+|harmonypy             |     |     |     |     |     |      |    |     |    |     |     |  🟢  |     |
+|celltypist            |     |     |     |     |     |      |    |     |    |     |     |  🟢  |     |
 
 🟢 - required<br>
 🟡 - optional
@@ -287,3 +290,12 @@ The pancreas is a highly specialized organ composed of distinct regions, includi
 The notebook leverages computational tools like scanpy for preprocessing, dimensionality reduction (PCA and UMAP), clustering (Leiden algorithm), and differential expression analysis. It also integrates STdeconvolve, a reference-free deconvolution tool, to identify latent transcriptional topics that represent co-expressed gene groups. These topics provide insights into spatially organized biological processes, such as endocrine function in the Islets of Langerhans or pathological changes like ADM, which is associated with pancreatic disease and cancer.
 
 [Click here to view Demo](notebooks/demo-visium-spatial.ipynb)
+
+
+### demo-snrna-seq-all-human-lung.ipynb
+
+This notebook walks step-by-step through querying **all** human lung single-nucleus RNA-sequencing datasets using `requests` against SenNet APIs; downloading `h5ad` data files for **all** existing donors directly from the SenNet portal; linking source and assay metadata; and undertaking processing, integration, and annotation of datasets.
+
+Often, it is useful to integrate datasets across samples to compare similar cell populations between batches. Various algorithms aim to mitigate "batch effects" that cause misalignment of otherwise comparable expression profiles. The `harmonypy` package iteratively adjusts the principal components of concatenated expression data until a convergence is reached, indicating that batches have been sufficiently "aligned". In this tutorial, over 250,000 cells representing 66 donors are pre-processed and integrated. The `celltypist` package is then used to predict cell types in the data by comparing to a model based on the Human Lung Cell Atlas. Finally, the resulting integration and annotation are used to compare how proportions of cell types in the human lung change across age groups.
+
+[Click here to view Demo](notebooks/demo-snrna-seq-all-human-lung.ipynb)
