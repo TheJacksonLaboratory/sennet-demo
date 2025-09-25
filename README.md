@@ -54,17 +54,17 @@ Note that until this repository is public, the user must login, e.g., as below, 
 <details closed><summary>Setup environmet</summary><p>
 Using conda is a bit easier:
 
-    conda create --name sennet-demo-env "python==3.9"
-    conda activate sennet-demo-env
+    conda create --name sennet-demo-env-a "python==3.9"
+    conda activate sennet-demo-env-a
 
     ## To remove environment
-    # conda env remove --name sennet-demo-env
+    # conda env remove --name sennet-demo-env-a
 
 or
 
 If Python 3.9 not installed, then install it and create a virtual environment (https://docs.python.org/3/tutorial/venv.html)
 
-    python3.9 -m venv myenv
+    python3.9 -m venv sennet-demo-env-a
     source myenv/bin/activate
 
 </p></details>
