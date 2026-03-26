@@ -79,12 +79,12 @@ If Python 3.9 not installed, then install it and create a virtual environment (h
 #### Step 3: Install packages
 
     # For environment A: most notebooks
-    pip install jupyter "notebook>=7" numpy pandas "pyarrow<=20.0.0" 'vitessce[all]' scanpy umap scipy scikit-learn matplotlib globus-cli atlas-consortia-clt requests tifffile imagecodecs igraph leidenalg harmonypy celltypist
+    pip install jupyter "notebook>=7" numpy pandas "pyarrow<=20.0.0" 'vitessce[all]' scanpy umap-learn scipy scikit-learn matplotlib globus-cli atlas-consortia-clt requests tifffile imagecodecs igraph leidenalg harmonypy celltypist
 
 or
 
     # For environment B: demo-affine-transform.ipynb
-    pip install jupyter "notebook>=7" "numpy<2.0" pandas "pyarrow<=20.0.0" scanpy umap scipy scikit-learn matplotlib requests fsspec zarr xarray "distributed<=2023" kerchunk tifffile imagecodecs stardist==0.8.5 tensorflow==2.14 igraph leidenalg anndata dask aiohttp==3.8.6
+    pip install jupyter "notebook>=7" "numpy<2.0" pandas "pyarrow<=20.0.0" scanpy umap-learn scipy scikit-learn matplotlib requests fsspec zarr xarray "distributed<=2023" kerchunk tifffile imagecodecs stardist==0.8.5 tensorflow==2.14 igraph leidenalg anndata dask aiohttp==3.8.6
 
 <details closed><summary>Packages usage</summary><p>
 
@@ -104,7 +104,7 @@ or
 |kerchunk              |     |     |     |     |     |      |    |     |    |     |  🟢 |     |     |
 |stardist              |     |     |     |     |     |      |    |     |    |     |  🟢 |     |     |
 |tensorflow            |     |     |     |     |     |      |    |     |    |     |  🟢 |     |     |
-|umap                  |     |     | 🟡  |     |     |     |     |     |    |     |     |     |     |
+|umap-learn            |     |     | 🟡  |     |     |     |     |     |    |     |     |     |     |
 |sklearn               |     |     | 🟡  |     |     |     |     |     |    |     |     |     |     |
 |globus-cli            | 🟡  |     |     |     |     |     |     |     |    |     |     |     |     |
 |atlas-consortia-clt   |     |     |     |     |     |      | 🟡 |     |    |     |     |     |     |
